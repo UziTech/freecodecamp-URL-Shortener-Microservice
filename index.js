@@ -1,28 +1,21 @@
-//mongodb://<dbuser>:<dbpassword>@ds023088.mlab.com:23088/test-node
-//pZ"RXPJZb)Te+K>\W,e"K<n){zLaU$eTA=9wF9Z$
+
 var express = require('express');
-var moment = require('moment');
+var MongoClient = require('mongodb').MongoClient;
+var MONGODB_URI = process.env.MONGOLAB_URI;
+
 var app = express();
 
 app.set('port', (process.env.PORT || 5000));
 
 app.use(function (req, res) {
-	var input = decodeURIComponent(req.path.replace(/^\//, ""));
-	var time = {unix: null, natural: null};
-	var date;
-	if (!input.match(/\D/)) {
-		date = moment(input, "X");
-	} else {
-		date = moment(input, "MMMM D, YYYY");
-		if (date.format("MMMM D, YYYY") !== input) {
-			date = moment.invalid();
+	MongoClient.connect(MONGODB_URI, function (err, db) {
+		if (err) {
+			return console.error(err);
 		}
-	}
-	if (date.isValid()) {
-		time.unix = date.unix();
-		time.natural = date.format("MMMM D, YYYY");
-	}
-	res.json(time);
+		console.log("Connected correctly to server");
+
+		db.close();
+	});
 });
 
 app.listen(app.get('port'), function () {
