@@ -10,10 +10,10 @@ app.set('port', (process.env.PORT || 5000));
 app.use(function (req, res) {
 	MongoClient.connect(MONGODB_URI, function (err, db) {
 		if (err) {
-			return console.error(err);
+			res.end("Error connecting to Mong0DB: " + err.message);
+		} else {
+			res.end("Connected to MongoDB");
 		}
-		console.log("Connected correctly to server");
-
 		db.close();
 	});
 });
