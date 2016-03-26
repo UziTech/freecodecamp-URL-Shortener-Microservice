@@ -1,22 +1,21 @@
 {
-	"name": "freecodecamp-URL-Shortener-Microservice",
-	"version": "1.0.0",
-	"description": "https://www.freecodecamp.com/challenges/url-shortener-microservice",
-	"main": "index.js",
-	"keywords": [
-		"freecodecamp",
-		"heroku"
-	],
-	"author": "TJBrix",
-	"contributors": [
-	],
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/UziTech/freecodecamp-URL-Shortener-Microservice"
-	},
-	"license": "MIT",
-	"dependencies": {
-		"express": "^4.13.4",
-		"mongodb": "^2.1.11"
-	}
+  "name": "freecodecamp-URL-Shortener-Microservice",
+  "version": "1.0.0",
+  "description": "https://www.freecodecamp.com/challenges/url-shortener-microservice",
+  "main": "index.js",
+  "keywords": [
+    "freecodecamp",
+    "heroku"
+  ],
+  "author": "TJBrix",
+  "contributors": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/UziTech/freecodecamp-URL-Shortener-Microservice"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.13.4",
+    "mongodb": "^2.1.11"
+  }
 }
